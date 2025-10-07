@@ -4,42 +4,43 @@ const prompt = require("prompt");
 // Start prompt
 prompt.start();
 
-// Ask user for input
+// Asking the input from the user 
 prompt.get(["userSelection"], function (err, result) {
+  // displays the errors if any 
   if (err) {
     console.log("Error occurred.");
     return;
   }
 
-  // Convert user input to uppercase
-  let userSelection = result.userSelection.toUpperCase();
+  // Convert user input to uppercase so that it becomes case-insensitive
+  let user = result.userSelection.toUpperCase();
 
-  // Generate computer choice
+  // generating a random computer choice 
   let randomNum = Math.random();
-  let computerSelection = "";
+  let comp = "";
 
-  if (randomNum <= 0.34) {
-    computerSelection = "PAPER";
-  } else if (randomNum <= 0.67) {
-    computerSelection = "SCISSORS";
+  if (randomNum <= 0.35) {
+    comp = "PAPER";
+  } else if (randomNum <= 0.63) {
+    comp = "SCISSORS";
   } else {
-    computerSelection = "ROCK";
+    comp = "ROCK";
   }
 
-  // Show choices
-  console.log("User chose:", userSelection);
-  console.log("Computer chose:", computerSelection);
+  // display the user and computer choices
+  console.log("Your choice:", user);
+  console.log("Computer choice:", comp);
 
-  // Decide winner
-  if (userSelection === computerSelection) {
+  // decision for getting the winner 
+  if (user === comp) {
     console.log("It's a tie!");
   } else if (
-    (userSelection === "ROCK" && computerSelection === "SCISSORS") ||
-    (userSelection === "PAPER" && computerSelection === "ROCK") ||
-    (userSelection === "SCISSORS" && computerSelection === "PAPER")
+    (user === "ROCK" && comp === "SCISSORS") ||
+    (user === "PAPER" && comp === "ROCK") ||
+    (user === "SCISSORS" && comp === "PAPER")
   ) {
-    console.log("User Wins!");
+    console.log("You Win!");
   } else {
-    console.log("Computer Wins!");
+    console.log("Computer Win!");
   }
 });
