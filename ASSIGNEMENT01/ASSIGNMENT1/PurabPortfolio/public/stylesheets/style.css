@@ -1,8 +1,226 @@
+/* google fonts imported here  */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu:wght@300;400;700&family=Matemasie&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu:wght@300;400;700&family=Matemasie&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu:wght@300;400;700&family=Matemasie&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gaegu:wght@300;400;700&family=Matemasie&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+IN:wght@100..400&family=Rubik:ital,wght@0,300..900;1,300..900&family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
-  /* padding: 50px; */
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #121212;
+    color: #E0E0E0;
+    margin: 0;
+    font-family: "Rubik", serif;
 }
 
 a {
   color: #00B7FF;
 }
+
+.home-content{
+  margin-top: 100px;
+  padding: 20px;
+  text-align: left;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+ .intro {
+        font-size: 60px;
+    }
+
+    .desc {
+        font-size: 20px;
+        line-height: 37px;
+    }
+
+    .typing {
+        display: inline-block;
+        border-right: 2px solid black;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .cv {
+        --font-color: white;
+        /* Default font color */
+        --body-light-bg: white;
+        /* Body background color for light mode */
+        --body-dark-bg: black;
+        /* Body background color for dark mode */
+
+        font-family: inherit;
+        display: inline-block;
+        width: 8em;
+        height: 2.6em;
+        line-height: 2.5em;
+        margin: 20px;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        border: 2px solid var(--font-color);
+        /* Border color matches font color */
+        transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+        z-index: 1;
+        font-size: 17px;
+        border-radius: 6px;
+        font-weight: 500;
+        color: var(--font-color);
+        /* Default font color */
+        background-color: transparent;
+        text-decoration: none;
+        /* Remove underline */
+        font-family: "Rubik", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+
+    /* Background animation on hover */
+    .cv:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background: white;
+        height: 150px;
+        width: 200px;
+        border-radius: 50%;
+        top: 100%;
+        left: 100%;
+        transition: all 0.7s;
+    }
+
+    /* Hover effect */
+    .cv:hover {
+        color: #0d0d21;
+        /* Change font color to body background */
+        background-color: white;
+    }
+
+    .cv:hover:before {
+        top: -30px;
+        left: -30px;
+    }
+
+    /* Remove underline for <a> inside the button */
+    .cv a {
+        text-decoration: none;
+        /* color: inherit; */
+    }
+
+    .cv:hover a {
+        color: inherit;
+        /* Inherit hover color from the button */
+    }
+
+.navbar{
+  height : 70px;
+  font-size: 17px;
+}
+
+/* Active navbar link */
+.navbar-nav .nav-link.active {
+    font-weight: bold !important;       /* make the active link bold */
+    color: #0d6efd !important;          /* change color to Bootstrap blue */
+    border-bottom: 2px solid #0d6efd;  /* optional underline for emphasis */
+    transition: all 0.3s ease;          /* smooth transition when switching pages */
+}
+
+/* Hover effect for non-active links */
+.navbar-nav .nav-link:not(.active):hover {
+    color: #0d6efd !important;
+}
+
+
+
+
+.card-body{
+      background-color: #1F1F1F;
+    color: white;
+}
+
+/* CONTACT FORM STYLING */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #E0E0E0;
+}
+
+/* Match header color for inputs and textarea */
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container input[type="number"],
+.contact-container textarea {
+  background-color: #1F1F1F;
+  color: #E0E0E0;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 10px 12px;
+  width: 100%;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Placeholder text color (slightly lighter) */
+.contact-container input::placeholder,
+.contact-container textarea::placeholder {
+  color: #B0B0B0;
+}
+
+/* On focus: highlight the input */
+.contact-container input:focus,
+.contact-container textarea:focus {
+  outline: none;
+  border-color: #0d6efd; /* Bootstrap primary blue or your preferred accent color */
+  background-color: #262626;
+}
+
+/* Submit button */
+.github {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.github:hover {
+  background-color: #0b5ed7;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  
+}
+
+.contact-details {
+  display: flex;               /* enables flexbox */
+  flex-direction: column;      /* stack content vertically */
+  justify-content: center;     /* vertical centering */
+  align-items: center;         /* horizontal centering */
+  height: 100%;                /* take full height of parent container */
+  text-align: center;          /* center the text inside paragraphs */
+}
+.contact-details p{
+  font-size: 20px;
+}
+
+   .contact-details p .followme{
+    font-size: 20px;
+   }
+
+   footer div a{
+    text-decoration: none;
+   }

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}} — {{siteTitle}}</title>
+
+
+<!-- Bootstrap CDN (allowed; cite in README) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- Custom stylesheet -->
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<!-- Font Awesome CDN for icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Header / Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #1F1F1F">
+<div class="container" style="color: #E0E0E0">
+<a class="navbar-brand text-white" style="font-size: 24px; font-weight: bold;" href="/">{{siteTitle}}</a>
+<button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+
+<div class="collapse navbar-collapse"  id="mainNav">
+<ul class="navbar-nav ms-auto ">
+<li class="nav-item"><a class="nav-link text-white {{#ifEquals navActive 'home'}}active{{/ifEquals}}" href="/">Home</a></li>
+<li class="nav-item"><a class="nav-link text-white {{#ifEquals navActive 'about'}}active{{/ifEquals}}" href="/about">About Me</a></li>
+<li class="nav-item"><a class="nav-link text-white {{#ifEquals navActive 'projects'}}active{{/ifEquals}}" href="/projects">Projects</a></li>
+<li class="nav-item"><a class="nav-link text-white {{#ifEquals navActive 'contact'}}active{{/ifEquals}}" href="/contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+
+<!-- Page body injected here -->
+<main class="container my-5">
+{{{body}}}
+</main>
+
+ <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <p class="mb-2 mb-md-0">&copy; {{siteTitle}} {{year}}</p>
+      <div>
+        <a href="https://github.com/PurabPriyani" target="_blank" class="text-light me-3">
+          <i class="fab fa-github fa-lg"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAEjiYusBYSK7M1SF6IXQ7nE62T_9fzEDCOU&keywords=purab%20priyani&origin=RICH_QUERY_SUGGESTION&position=2&searchId=63b509bc-e570-47bd-8fe0-f318ee1bf4da&sid=M!f&spellCorrectionEnabled=false" target="_blank" class="text-light">
+          <i class="fab fa-linkedin fa-lg"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

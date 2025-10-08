@@ -1,0 +1,70 @@
+<section>
+  <div class="container">
+    <div class="home-container row">
+      <!-- Left: Home content -->
+      <div class="home-content col-6">
+        <p class="intro">I'm Purab, <br>
+          <span class="typing" id="dynamic-text"></span>
+        </p>
+        <p class="desc">A Computer Programmer with a deep passion to craft beautiful and functional websites.
+          <br> I blend creativity and code to build stunning websites.
+        </p>
+        <a href="/PurabResume.docx" download>
+          <button class="cv">
+            <p>CV</p>
+          </button>
+        </a>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="home-img col-6">
+        <img src="/images/web-removebg-preview.png" alt="Portfolio image">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  // Hamburger menu toggle (if header partial includes hamburger)
+  const hamburger = document.getElementById("hamburger-icon");
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      const navList = document.getElementById("nav-list");
+      navList.classList.toggle("active");
+    });
+  }
+
+  // Typing effect
+  const words = ["Web Developer", "Programmer", "Designer"];
+  let i = 0, j = 0, currentWord = "", isDeleting = false;
+
+  function type() {
+    const dynamicText = document.getElementById("dynamic-text");
+    if (!dynamicText) return;
+
+    if (i < words.length) {
+      if (!isDeleting && j <= words[i].length) {
+        currentWord = words[i].substring(0, j);
+        dynamicText.textContent = currentWord;
+        j++;
+        setTimeout(type, 150);
+      } else if (isDeleting && j >= 0) {
+        currentWord = words[i].substring(0, j);
+        dynamicText.textContent = currentWord;
+        j--;
+        setTimeout(type, 100);
+      } else if (!isDeleting && j > words[i].length) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % words.length;
+        setTimeout(type, 200);
+      }
+    }
+  }
+
+  type();
+</script>
