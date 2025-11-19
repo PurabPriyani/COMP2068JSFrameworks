@@ -1,0 +1,95 @@
+<div class="container">
+
+  <h1 class="title">PayPal Transactions Manager</h1>
+
+  <!-- SUMMARY -->
+  <div class="summary" *ngIf="transactions.length > 0">
+    <span>Total Transactions: <b>{{ totalCount }}</b></span>
+    <span>Total Amount: <b>${{ totalAmount }}</b></span>
+  </div>
+
+  <!-- ADD TRANSACTION -->
+  <div class="card">
+    <h2 class="section-title">Add Transaction</h2>
+
+    <div class="form-grid">
+      <input [(ngModel)]="payer" placeholder="Payer" class="input">
+      <input [(ngModel)]="payee" placeholder="Payee" class="input">
+      <input [(ngModel)]="amount" type="number" placeholder="Amount" class="input">
+
+      <select [(ngModel)]="status" class="input">
+        <option value="Pending">Pending</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <button class="btn-primary" (click)="add()">Add Transaction</button>
+    </div>
+  </div>
+
+  <!-- TRANSACTION LIST -->
+  <div class="card">
+    <h2 class="section-title">Transactions</h2>
+
+    <table class="transaction-table">
+      <thead>
+        <tr>
+          <th>Payer</th>
+          <th>Payee</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let t of transactions">
+
+          <!-- PAYER -->
+          <td>
+            <input *ngIf="editId === t._id" [(ngModel)]="editPayer" class="edit-input">
+            <span *ngIf="editId !== t._id">{{ t.payer }}</span>
+          </td>
+
+          <!-- PAYEE -->
+          <td>
+            <input *ngIf="editId === t._id" [(ngModel)]="editPayee" class="edit-input">
+            <span *ngIf="editId !== t._id">{{ t.payee }}</span>
+          </td>
+
+          <!-- AMOUNT -->
+          <td>
+            <input *ngIf="editId === t._id" [(ngModel)]="editAmount" type="number" class="edit-input">
+            <span *ngIf="editId !== t._id">${{ t.amount }}</span>
+          </td>
+
+          <!-- STATUS -->
+          <td>
+            <select *ngIf="editId === t._id" [(ngModel)]="editStatus" class="edit-input">
+              <option value="Pending">Pending</option>
+              <option value="Completed">Completed</option>
+            </select>
+
+            <span *ngIf="editId !== t._id"
+              [ngClass]="{
+                'pending': t.status === 'Pending',
+                'completed': t.status === 'Completed'
+              }">
+              {{ t.status }}
+            </span>
+          </td>
+
+          <!-- ACTIONS -->
+          <td>
+            <button *ngIf="editId !== t._id" class="btn-edit" (click)="startEdit(t)">Edit</button>
+            <button *ngIf="editId !== t._id" class="btn-delete" (click)="delete(t._id)">Delete</button>
+
+            <button *ngIf="editId === t._id" class="btn-save" (click)="saveEdit()">Save</button>
+            <button *ngIf="editId === t._id" class="btn-cancel" (click)="cancelEdit()">Cancel</button>
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

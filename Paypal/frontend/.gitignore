@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+.env
+
+# Angular
+frontend/.angular/cache
+frontend/.vscode/
+frontend/dist/
+
+# Logs
+logs
+*.log
+log.txt
+
+# OS
+.DS_Store
+Thumbs.db
