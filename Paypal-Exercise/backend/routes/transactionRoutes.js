@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// ⭐ UPDATE (PUT)
+// UPDATE (PUT)
 router.put('/:id', async (req, res) => {
   try {
     const updated = await Transaction.findByIdAndUpdate(
@@ -37,7 +37,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// ⭐ DELETE
+// DELETE
 router.delete('/:id', async (req, res) => {
   try {
     await Transaction.findByIdAndDelete(req.params.id);
