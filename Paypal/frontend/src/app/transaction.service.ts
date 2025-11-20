@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TransactionService {
 
-  private apiUrl = 'http://localhost:3000/api/transactions';
+  private apiUrl = 'https://paypal-backend-1v6y.onrender.com/api/transactions';
 
   constructor(private http: HttpClient) {}
 
