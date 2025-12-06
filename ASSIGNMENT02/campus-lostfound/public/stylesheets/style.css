@@ -1,0 +1,253 @@
+/* ==========================================
+   GLOBAL STYLE RESET
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #F0FAFA;  /* Soft mint background */
+  color: #0D2A2A;
+  overflow-x: hidden;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   NAVBAR — TEAL + NAVY
+========================================== */
+
+.navbar {
+  background: linear-gradient(90deg, #006B6B, #008B8B) !important;
+  padding: 14px 0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #E0FFFF !important;
+}
+
+.nav-link {
+  font-weight: 600 !important;
+  color: #E0FFFF !important;
+  margin-left: 10px;
+  transition: 0.25s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   HOMEPAGE HERO SECTION
+========================================== */
+
+.home-hero {
+  background: linear-gradient(rgba(0,107,107,0.75), rgba(0,139,139,0.75)),
+              url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b')
+              center/cover no-repeat;
+  
+  border-radius: 18px;
+  padding: 90px 40px;
+  color: white;
+  text-shadow: 1px 1px 12px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 1s ease-out;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.home-hero h1 {
+  font-weight: 900;
+  font-size: 3.1rem;
+}
+
+.home-hero p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+}
+
+/* ==========================================
+   BUTTONS — MODERN STYLE
+========================================== */
+
+.btn-primary {
+  background: #008B8B !important;
+  border: none !important;
+  padding: 13px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 10px;
+  color: white !important;
+  box-shadow: 0 5px 14px rgba(0, 139, 139, 0.3);
+  transition: 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: #006B6B !important;
+  transform: translateY(-3px);
+}
+
+.btn-success {
+  background: #20CFCF !important;
+  border: none;
+  font-weight: 700;
+  color: #003333 !important;
+  box-shadow: 0 4px 12px rgba(32,207,207,0.28);
+}
+
+.btn-success:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+}
+
+.btn-warning, .btn-danger, .btn-dark {
+  font-weight: 700;
+  border-radius: 8px;
+  transition: 0.25s ease;
+}
+
+.btn-warning:hover,
+.btn-danger:hover,
+.btn-dark:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* ==========================================
+   CARDS — ITEM LISTING DESIGN
+========================================== */
+
+.card {
+  border-radius: 16px !important;
+  border: none !important;
+  overflow: hidden;
+  background: #ffffff;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  animation: fadeIn 0.8s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+.card-title {
+  font-weight: 800;
+  color: #006B6B;
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.2);
+}
+
+/* ==========================================
+   FORMS — CLEAN CAMPUS UI
+========================================== */
+
+form.card {
+  padding: 28px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.15);
+}
+
+.form-label {
+  font-weight: 700;
+}
+
+.form-control {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #BFD9D9;
+  transition: 0.25s ease;
+}
+
+.form-control:focus {
+  border-color: #008B8B;
+  box-shadow: 0 0 8px rgba(0,139,139,0.35);
+}
+
+/* ==========================================
+   SEARCH BAR
+========================================== */
+
+.input-group .form-control {
+  border-radius: 12px 0 0 12px !important;
+}
+
+.input-group .btn-primary {
+  border-radius: 0 12px 12px 0 !important;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+  background: #006B6B !important;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border-top: 3px solid #008B8B;
+  box-shadow: 0 -4px 14px rgba(0,0,0,0.18);
+}
+
+/* ==========================================
+   HEADINGS
+========================================== */
+
+h1, h2, h3, h4 {
+  color: #0B5959;
+  font-weight: 800;
+}
+
+/* ==========================================
+   DELETE ALERT
+========================================== */
+
+.text-danger {
+  color: #B30000 !important;
+}
+
+/* ==========================================
+   EMPTY STATE MESSAGE
+========================================== */
+
+.empty-message {
+  padding: 50px;
+  text-align: center;
+  font-size: 1.25rem;
+  opacity: 0.7;
+}
+
+/* ==========================================
+   IMAGE PREVIEW
+========================================== */
+
+img.preview {
+  max-width: 250px;
+  border-radius: 12px;
+  margin-top: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.22);
+}
